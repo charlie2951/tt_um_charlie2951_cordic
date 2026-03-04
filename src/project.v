@@ -4,7 +4,8 @@
  */
 
 `default_nettype none
-
+parameter CLK_FREQ = 25000000,
+    parameter BAUD     = 115200;
 module tt_um_cordic (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
@@ -24,10 +25,7 @@ module tt_um_cordic (
   // List all unused inputs to prevent warnings
     wire _unused = &{ena, uio_in[0],uio_in[1],uio_in[2],uio_in[3],uio_in[4],uio_in[5],uio_in[6],uio_in[7], 1'b0};
 //Instantiate top module
- tt_cordic_uart #(
-    parameter CLK_FREQ = 25000000,
-    parameter BAUD     = 115200
-    ) math_soc(
+ tt_cordic_uart #(CLK_FREQ ,BAUD) math_soc(
         .clk(clk),
         .rst_n(rst_n),
         .uart_rx(ui_in[0]),
