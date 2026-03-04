@@ -24,7 +24,7 @@ parameter BAUD     = 115200;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[0],uio_in[1],uio_in[2],uio_in[3],uio_in[4],uio_in[5],uio_in[6],uio_in[7], 1'b0};
+    wire _unused = &{ena, ui_in[1],ui_in[2],ui_in[3],ui_in[4],ui_in[5],ui_in[6],ui_in[7],uio_in[0],uio_in[1],uio_in[2],uio_in[3],uio_in[4],uio_in[5],uio_in[6],uio_in[7], 1'b0};
 //Instantiate top module
     tt_cordic_uart #(.CLK_FREQ(CLK_FREQ) ,.BAUD(BAUD)) math_soc(
         .clk(clk),
