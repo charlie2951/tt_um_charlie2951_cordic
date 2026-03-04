@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This project is about Cordic Implementation of a MATH processor
 
 ## How to test
 
-Explain how to use your project
+Send data via UART and observe output of uo_out (lower byte) and uio_out(upper byte)
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+USB to RS232 converter
