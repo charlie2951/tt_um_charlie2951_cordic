@@ -22,6 +22,7 @@ always @(posedge clk ) begin
         clk_cnt <= 0;
         bit_idx <= 0;
         valid <= 0;
+        shift <= 0;
     end else begin
         valid <= 0;
 
