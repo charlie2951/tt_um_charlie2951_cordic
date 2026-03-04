@@ -18,7 +18,8 @@ module controller_no_tx (
 );
 
 localparam IDLE=0,
-           RX_A0=1,RX_A1=2,RX_A2=3,RX_A3=4,
+           RX_A0=1,RX_A1=2,
+            //RX_A2=3,RX_A3=4,
            START=5,WAIT=6;
 
 reg [2:0] state;
@@ -26,7 +27,7 @@ reg [7:0] opcode;
 
 assign ready = (state == IDLE);
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk ) begin
     if (!rst_n) begin
         state <= IDLE;
         cordic_start <= 0;
