@@ -16,7 +16,7 @@ reg [3:0]  bit_idx;
 reg [9:0]  shift;
 reg busy;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk ) begin
     if (!rst_n) begin
         busy <= 0;
         clk_cnt <= 0;
